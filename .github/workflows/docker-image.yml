@@ -33,3 +33,14 @@ jobs:
           tags: |
             wxwmatt/ubuntu-gear:${{ env.TAG }}
             wxwmatt/ubuntu-gear:latest
+
+      - name: Build and push (zsh)
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile-zsh
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            wxwmatt/ubuntu-gear-zsh:${{ env.TAG }}
+            wxwmatt/ubuntu-gear-zsh:latest
