@@ -15,4 +15,4 @@ USER ubuntu
 
 RUN /bin/bash -c "$(curl -fsSL https://git.io/JDlEZ)"
 
-CMD ["bash"]
+ENTRYPOINT ["bash"]

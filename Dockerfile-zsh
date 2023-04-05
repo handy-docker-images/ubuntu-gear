@@ -10,10 +10,13 @@ RUN apt-get update && \
     iputils-ping \
     net-tools && \
     useradd -m -s $(which zsh) ubuntu && \
-    rm -rf /var/lib/apt/lists/* 
+    rm -rf /var/lib/apt/lists/*
 
 USER ubuntu
+WORKDIR /home/ubuntu
+
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 RUN /bin/bash -c "$(curl -fsSL https://git.io/JDlEZ)"
 
-CMD ["zsh"]
+ENTRYPOINT ["zsh"]
