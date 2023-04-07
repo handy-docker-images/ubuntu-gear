@@ -12,6 +12,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 USER ubuntu
+WORKDIR /home/ubuntu
 
 RUN /bin/bash -c "$(curl -fsSL https://git.io/JDlEZ)"
 
